@@ -23,5 +23,5 @@ Internal archive format for Trends :
     #create a network named elastic
     docker run -d  -v /rex/ssd/zpehlivan/twitter_2018-03/trends/:/usr/src/temp/data -v /rex/ssd/zpehlivan/twitter_2018-03/twitter_indexer/:/usr/src/temp  -ti  --rm   --name tindexer   docker.rech.ina.fr/zpehlivan/temp-docker:latest
       
-# TODO:
+### TODO:
 * Add index name, es etc. as params to script.
