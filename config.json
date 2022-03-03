@@ -1,0 +1,7 @@
+{
+
+  "params":  "",
+  "script": "/usr/src/temp/trendsIndexer.py",
+  "logging": "/usr/src/temp/logging.ini"
+
+}

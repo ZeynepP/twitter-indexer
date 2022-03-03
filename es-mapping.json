@@ -1,0 +1,273 @@
+
+    {
+        "date_detection": true,
+        "dynamic" : "false",
+        "properties":
+        {
+            "id":
+            {
+                "type": "keyword"
+            },
+             "id_str":
+            {
+                "type": "keyword"
+            },
+            "created_at":
+            {
+                "type": "keyword"
+
+            },
+
+            "text":
+            {
+                "type": "text",
+                "analyzer": "text_fr"
+            },
+            "full_text":
+            {
+                "type": "text",
+                "analyzer": "text_fr"
+
+            },
+            "timestamp_ms":
+            {
+                "type": "date",
+                "format": "epoch_millis",
+                "fields":
+                {
+                    "keyword":
+                    {
+                        "type": "date"
+                    }
+                }
+            },
+             "created_at_local":
+            {
+                "type": "date",
+                "format": "epoch_millis",
+                "fields":
+                {
+                    "keyword":
+                    {
+                        "type": "date"
+                    }
+                }
+            },
+            "filter_level":
+            {
+                "type": "keyword",
+                "null_value": "",
+                "fields":
+                {
+                    "keyword":
+                    {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "truncated":
+            {
+                "type": "keyword",
+                "null_value": "",
+                "fields":
+                {
+                    "keyword":
+                    {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "possibly_sensitive":
+            {
+                "type": "keyword",
+                "null_value": "",
+                "fields":
+                {
+                    "keyword":
+                    {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "retweeted":
+            {
+                "type": "boolean",
+                "fields":
+                {
+                    "keyword":
+                    {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "quoted":
+            {
+                "type": "boolean",
+                "fields":
+                {
+                    "keyword":
+                    {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "favorited":
+            {
+                "type": "boolean",
+                "fields":
+                {
+                    "keyword":
+                    {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "lang":
+            {
+                "type": "keyword",
+                "fields":
+                {
+                    "keyword":
+                    {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "in_reply_to_status_id":
+            {
+                "type": "keyword",
+                "fields":
+                {
+                    "keyword":
+                    {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "in_reply_to_user_id":
+            {
+                "type": "keyword",
+                "fields":
+                {
+                    "keyword":
+                    {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "in_reply_to_screen_name":
+            {
+                "type": "keyword",
+
+                "null_value": "null",
+                "fields":
+                {
+                    "keyword":
+                    {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "retweet_count":
+            {
+                "type": "integer",
+                "null_value": 0
+            },
+            "favorite_count":
+            {
+                "type": "integer",
+                "null_value": 0
+            },
+            "source":
+            {
+                "type": "keyword",
+                "null_value": "",
+                "fields":
+                {
+                    "keyword":
+                    {
+                        "type": "keyword"
+                    }
+                }
+            },
+            "user": {
+	        	"type" : "object",
+				"properties" : {
+		            "statuses_count": {"type" : "integer", "null_value" : 0, "fields":{"keyword": {"type": "integer"}}},
+		            "followers_count":  {"type" : "integer", "null_value" : 0, "fields":{"keyword": {"type": "integer"}}},
+		            "listed_count":  {"type" : "integer", "null_value" : 0, "fields":{"keyword": {"type": "integer"}}},
+		            "friends_count": {"type" : "integer", "null_value" : 0, "fields":{"keyword": {"type": "integer"}}},
+		            "favourites_count": {"type" : "integer", "null_value" : 0, "fields":{"keyword": {"type": "integer"}}},
+		            "created_at": {"type" : "keyword"},
+		            "name": {"type" : "keyword", "null_value" : "null","fields":{"keyword": {"type": "keyword"}}},
+		            "url": {"type" : "keyword",  "null_value" : "null"},
+		            "id": {"type" : "keyword"},
+		            "profile_image_url": {"type" : "keyword"} ,
+		            "description": {"type" : "text", "analyzer" : "text_fr"},
+		            "screen_name": {"type" : "keyword", "fields":{"keyword": {"type": "keyword"}}},
+		            "location":  {"type" : "keyword", "fields":{"keyword": {"type": "keyword"}}},
+		            "lang": {"type" : "keyword", "fields":{"keyword": {"type": "keyword"}}}
+			      }
+	      },
+
+            "place": {
+	    	   "type" : "object",
+				"properties" : {
+						"country": {"type" : "keyword",  "null_value" : "null","fields":{"keyword": {"type": "keyword"}} },
+						"name":{"type" : "keyword",  "null_value" : "null","fields":{"keyword": {"type": "keyword"}} },
+						"place_type" :{"type" : "keyword",  "null_value" : "null"},
+						"id": {"type" : "keyword"},
+						"country_code": {"type" : "keyword",  "null_value" : "null","fields":{"keyword": {"type": "keyword"}} }
+                }
+	      },
+
+
+        "link_twitter" : {"type" : "keyword"},
+        "urls": {"type" : "keyword","fields":{"keyword": {"type": "keyword"}}},
+            "user_mentions":
+                        {
+                            "type": "object",
+                            "properties":
+                            {
+                                "name":
+                                {
+                                    "type": "keyword",
+                                    "fields":
+                                    {
+                                        "keyword":
+                                        {
+                                            "type": "keyword"
+                                        }
+                                    }
+                                },
+                                "screen_name":
+                                {
+                                    "type": "keyword",
+
+                                    "fields":
+                                    {
+                                        "keyword":
+                                        {
+                                            "type": "keyword"
+                                        }
+                                    }
+                                },
+                                "id":
+                                {
+                                    "type": "keyword"
+                                }
+                            }
+                        },
+        "hashtags": {"type" : "keyword","fields":{"keyword": {"type": "keyword"}}},
+        "media":{
+            "properties" : {
+                "media_url" :  {"type" : "keyword"} ,
+                "expanded_url" :  {"type" : "keyword"},
+                "type" : {"type" : "keyword","fields":{"keyword": {"type": "keyword"}}} ,
+                "id" :  {"type" : "keyword","fields":{"keyword": {"type": "keyword"}}}
+
+            }
+        }
+        }
+    }
+
