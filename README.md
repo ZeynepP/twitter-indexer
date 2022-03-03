@@ -1,6 +1,6 @@
 # Small project to index archived trends and tweets  
 
-The data is from Twitter API V2.0, this code is not compatible with V2.0.
+The data is from Twitter API V1.0, this code is not compatible with V2.0.
 
 Internal archive format for Tweets : 
 [timestamp_archived_date, tweet_id/internal_code, tweet_data from REST API ] \
@@ -23,5 +23,5 @@ Internal archive format for Trends :
     #create a network named elastic
     docker run -d  -v /rex/ssd/zpehlivan/twitter_2018-03/trends/:/usr/src/temp/data -v /rex/ssd/zpehlivan/twitter_2018-03/twitter_indexer/:/usr/src/temp  -ti  --rm   --name tindexer   docker.rech.ina.fr/zpehlivan/temp-docker:latest
       
-#TODO:
+# TODO:
 * Add index name, es etc. as params to script.
